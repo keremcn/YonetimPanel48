@@ -1,0 +1,40 @@
+﻿@model IEnumerable<YonetimPanel48.Models.TBL_HABER>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.P_BASLIK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.P_ICERIK)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_BASLIK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_ICERIK)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.H_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.H_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.H_ID })
+        </td>
+    </tr>
+}
+
+</table>
